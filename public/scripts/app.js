@@ -1,3 +1,1 @@
-'use strict';
-
-console.log('dsfsf');
+"use strict";
