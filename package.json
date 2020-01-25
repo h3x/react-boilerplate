@@ -6,13 +6,17 @@
   "author": "Adam <aausti23@myune.edu.au>",
   "license": "MIT",
   "scripts": {
-    "dev": "npm-run-all --parallel babelBuild liveServerWatch",
-    "babelBuild": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "liveServerWatch": "live-server public"
+    "dev": "npm-run-all --parallel build-babel serve",
+    "build": "webpack --watch",
+    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
+    "serve": "live-server public"
   },
   "dependencies": {
+    "babel-cli": "6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "live-server": "^1.2.1",
+    "webpack": "3.1.0",
     "yarn-run-all": "^3.1.1"
   }
 }
