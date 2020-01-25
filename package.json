@@ -6,17 +6,23 @@
   "author": "Adam <aausti23@myune.edu.au>",
   "license": "MIT",
   "scripts": {
-    "dev": "npm-run-all --parallel build-babel serve",
-    "build": "webpack --watch",
-    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "serve": "live-server public"
+    "serve": "webpack-dev-server",
+    "build": "webpack"
   },
   "dependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
     "babel-cli": "6.24.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "live-server": "^1.2.1",
-    "webpack": "3.1.0",
-    "yarn-run-all": "^3.1.1"
+    "react": "16.5",
+    "react-dom": "16.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
