@@ -4,10 +4,12 @@ import AddOption from "./AddOption";
 import Header from "./Header";
 import Action from "./Action";
 import Options from "./Options";
+import OptionModal from "./OptionModal";
 
 export default class IndecisionApp extends React.Component {
   state = {
     options: [],
+    selectedOption: undefined,
     subtitle: "Put your life in the hands of a computer"
   };
 
@@ -23,7 +25,13 @@ export default class IndecisionApp extends React.Component {
 
   handlePick = () => {
     const randIndex = Math.floor(Math.random() * this.state.options.length);
-    alert(this.state.options[randIndex]);
+    const option = this.state.options[randIndex];
+
+    this.setState(() => ({ selectedOption: option }));
+  };
+
+  closeModal = () => {
+    this.setState(() => ({ selectedOption: undefined }));
   };
 
   handleAddOption = option => {
@@ -65,6 +73,10 @@ export default class IndecisionApp extends React.Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          closeModal={this.closeModal}
+        />
       </div>
     );
   }

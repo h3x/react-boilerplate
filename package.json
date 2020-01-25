@@ -21,6 +21,7 @@
     "babel-preset-react": "^6.24.1",
     "react": "16.5",
     "react-dom": "16.5",
+    "react-modal": "^3.11.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
